@@ -79,49 +79,6 @@
 			<camera mode="fixed" name="eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
 			<!-- to add gripper -->
 		    </body>
-
-                    <!-- <body name="xarm_gripper_base_link" quat="0 0 0 1"> -->
-                    <!--   <inertial pos="-0.00065489 -0.0018497 0.048028" quat="0.997403 -0.0717512 -0.0061836 0.000477479" -->
-                    <!--     mass="0.54156" diaginertia="0.000471093 0.000332307 0.000254799"/> -->
-                    <!--   <geom mesh="base_link" type="mesh" material="white"/> -->
-                    <!--   <body name="left_outer_knuckle" pos="0 0.035 0.059098"> -->
-                    <!--     <inertial pos="0 0.021559 0.015181" quat="0.47789 0.87842 0 0" mass="0.033618" -->
-                    <!--       diaginertia="1.9111e-05 1.79089e-05 1.90167e-06"/> -->
-                    <!--     <joint name="left_driver_joint" frictionloss="1" axis="1 0 0" range="0 0.85" armature="0.005" damping="0.1" solreflimit="0.005 1" class="driver"/> -->
-                    <!--     <geom material="black" mesh="left_outer_knuckle"/> -->
-                    <!--     <body name="left_finger" pos="0 0.035465 0.042039"> -->
-                    <!--       <inertial pos="0 -0.016413 0.029258" quat="0.697634 0.115353 -0.115353 0.697634" -->
-                    <!--         mass="0.048304" diaginertia="1.88037e-05 1.7493e-05 3.56792e-06"/> -->
-                    <!--       <joint name="left_finger_joint" frictionloss="1" axis="-1 0 0" range="0 0.85" solreflimit="0.005 1" class="follower"/> -->
-                    <!--       <geom material="black" mesh="left_finger"/> -->
-                    <!--     </body> -->
-                    <!--   </body> -->
-                    <!--   <body name="left_inner_knuckle" pos="0 0.02 0.074098"> -->
-                    <!--     <inertial pos="1.86601e-06 0.0220468 0.0261335" quat="0.664139 -0.242732 0.242713 0.664146" -->
-                    <!--       mass="0.0230126" diaginertia="8.34216e-06 6.0949e-06 2.75601e-06"/> -->
-                    <!--     <joint name="left_inner_knuckle_joint" frictionloss="1" axis="1 0 0" range="0 0.85" stiffness="0.05" springref="2.62" damping="0.00125" class="spring_link"/> -->
-                    <!--     <geom material="black" mesh="left_inner_knuckle"/> -->
-                    <!--   </body> -->
-                    <!--   <body name="right_outer_knuckle" pos="0 -0.035 0.059098"> -->
-                    <!--     <inertial pos="0 -0.021559 0.015181" quat="0.87842 0.47789 0 0" mass="0.033618" -->
-                    <!--       diaginertia="1.9111e-05 1.79089e-05 1.90167e-06"/> -->
-                    <!--     <joint name="right_driver_joint" frictionloss="1" axis="-1 0 0" range="0 0.85" armature="0.005" damping="0.1" solreflimit="0.005 1" class="driver"/> -->
-                    <!--     <geom material="black" mesh="right_outer_knuckle"/> -->
-                    <!--     <body name="right_finger" pos="0 -0.035465 0.042039"> -->
-                    <!--       <inertial pos="0 0.016413 0.029258" quat="0.697634 -0.115356 0.115356 0.697634" -->
-                    <!--         mass="0.048304" diaginertia="1.88038e-05 1.7493e-05 3.56779e-06"/> -->
-                    <!--       <joint name="right_finger_joint" frictionloss="1" axis="1 0 0" range="0 0.85" solreflimit="0.005 1" class="follower"/> -->
-                    <!--       <geom material="black" mesh="right_finger"/> -->
-                    <!--     </body> -->
-                    <!--   </body> -->
-                    <!--   <body name="right_inner_knuckle" pos="0 -0.02 0.074098"> -->
-                    <!--     <inertial pos="1.866e-06 -0.022047 0.026133" quat="0.66415 0.242702 -0.242721 0.664144" -->
-                    <!--       mass="0.023013" diaginertia="8.34209e-06 6.0949e-06 2.75601e-06"/> -->
-                    <!--     <joint name="right_inner_knuckle_joint" frictionloss="1" axis="-1 0 0" range="0 0.85" stiffness="0.05" springref="2.62" damping="0.00125" class="spring_link"/>  -->
-                    <!--     <geom material="black" mesh="right_inner_knuckle"/> -->
-                    <!--   </body> -->
-                    <!--   <site name="link_tcp" pos="0 0 .172" size="0.001" rgba="1 0 0 1" group="4"/> -->
-                    <!-- </body> -->
                   </body>
                 </body>
               </body>
@@ -132,44 +89,6 @@
     </body>
   </worldbody>
 
-  <!-- <contact> -->
-  <!--   <exclude body1="right_inner_knuckle" body2="right_outer_knuckle"/> -->
-  <!--   <exclude body1="right_inner_knuckle" body2="right_finger"/> -->
-  <!--   <exclude body1="left_inner_knuckle" body2="left_outer_knuckle"/> -->
-  <!--   <exclude body1="left_inner_knuckle" body2="left_finger"/> -->
-  <!-- </contact> -->
-
-  <!-- <tendon> -->
-  <!--   <fixed name="split"> -->
-  <!--     <joint joint="right_driver_joint" coef="0.5"/> -->
-  <!--     <joint joint="left_driver_joint" coef="0.5"/> -->
-  <!--   </fixed> -->
-  <!-- </tendon> -->
-
-  <!-- <equality> -->
-  <!--   <connect anchor="0 0.015 0.015" body1="right_finger" body2="right_inner_knuckle" solref="0.005 1"/> -->
-  <!--   <connect anchor="0 -0.015 0.015" body1="left_finger" body2="left_inner_knuckle" solref="0.005 1"/> -->
-  <!--   <joint joint1="left_driver_joint" joint2="right_driver_joint" polycoef="0 1 0 0 0" solref="0.005 1"/> -->
-  <!-- </equality> -->
-
-  <!-- <actuator> -->
-  <!--   <general name="act1" joint="joint1" gainprm="1500" biasprm="0 -1500 -150" forcerange="-50 50"/> -->
-  <!--   <general name="act2" joint="joint2" gainprm="1500" biasprm="0 -1500 -150" forcerange="-50 50" ctrlrange="-2.059 2.0944"/> -->
-  <!--   <general name="act3" joint="joint3" gainprm="1000" biasprm="0 -1000 -100" forcerange="-30 30"/> -->
-  <!--   <general name="act4" joint="joint4" gainprm="1000" biasprm="0 -1000 -100" forcerange="-30 30" ctrlrange="-0.19198 3.927"/> -->
-  <!--   <general name="act5" joint="joint5" gainprm="1000" biasprm="0 -1000 -100" forcerange="-30 30"/> -->
-  <!--   <general name="act6" joint="joint6" gainprm="800" biasprm="0 -800 -80" forcerange="-20 20" ctrlrange="-1.69297 3.14159"/> -->
-  <!--   <general name="act7" joint="joint7" gainprm="800" biasprm="0 -800 -80" forcerange="-20 20"/> -->
-  <!-- </actuator> -->
-    <!-- <actuator> -->
-    <!-- 	<motor name="act1" joint="joint1"/> -->
-    <!-- 	<motor name="act2" joint="joint2" ctrlrange="-2.059 2.0944"/> -->
-    <!-- 	<motor name="act3" joint="joint3"/> -->
-    <!-- 	<motor name="act4" joint="joint4" ctrlrange="-0.19198 3.927"/> -->
-    <!-- 	<motor name="act5" joint="joint5"/> -->
-    <!-- 	<motor name="act6" joint="joint6" ctrlrange="-1.69297 3.14159"/> -->
-    <!-- 	<motor name="act7" joint="joint7"/> -->
-    <!-- </actuator> -->
   <actuator>
     <!-- Physical limits of the actuator. -->
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_j1"/>
@@ -180,8 +99,4 @@
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint6" name="torq_j6"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint7" name="torq_j7"/>
   </actuator>
-
-<!--   <keyframe> -->
-<!--     <key name="home" qpos="0 -.247 0 .909 0 1.15644 0" ctrl="0 -.247 0 .909 0 1.15644 0"/> -->
-<!--   </keyframe> -->
 </mujoco>
