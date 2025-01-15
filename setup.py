@@ -1,15 +1,4 @@
-# read the contents of your README file
-from os import path
-
 from setuptools import find_packages, setup
-
-this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
-    lines = f.readlines()
-
-# remove images from README
-lines = [x for x in lines if ".png" not in x]
-long_description = "".join(lines)
 
 setup(
     name="robosuite",
@@ -25,7 +14,6 @@ setup(
         "pynput",
         "termcolor",
         "pytest",
-        "tqdm",
     ],
     eager_resources=["*"],
     include_package_data=True,
@@ -34,7 +22,12 @@ setup(
     author="Yuke Zhu",
     url="https://github.com/ARISE-Initiative/robosuite",
     author_email="yukez@cs.utexas.edu",
-    version="1.5.1",
-    long_description=long_description,
+    version="1.5.0",
+    long_description=(
+        "robosuite is a modular simulation framework and benchmark designed for "
+        "robot learning research. It provides tools for creating diverse robotic "
+        "environments and tasks, facilitating experimentation and evaluation of "
+        "robot learning algorithms."
+    ),
     long_description_content_type="text/markdown",
 )

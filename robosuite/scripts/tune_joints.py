@@ -308,8 +308,12 @@ if __name__ == "__main__":
     else:
         key_handler.set_joint_positions(args.init_qpos)
 
+    def get_joint_positions(joint_pos_cos, joint_pos_sin):
+        return np.arctan2(joint_pos_sin, joint_pos_cos)  
+
     # just spin to let user interact with window
     while True:
         action = np.zeros(env.action_dim)
         obs, reward, done, _ = env.step(action)
+        # print(get_joint_positions(obs["robot0_joint_pos_cos"], obs["robot0_joint_pos_sin"]))
         env.render()

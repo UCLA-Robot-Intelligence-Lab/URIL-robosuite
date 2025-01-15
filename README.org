@@ -1,0 +1,55 @@
+* URIL Robosuite
+** Installation
+1. Clone this repo
+2. Install pip dependencies
+#+begin_src bash
+pip install -r requirements.txt
+#+end_src
+
+3. Run the setup.py to install the robosuite package in develop mode (editable)
+#+begin_src bash
+python setup.py develop
+#+end_src
+If you don't want it to be editable package, just do regular install
+#+begin_src bash
+python setup.py install 
+#+end_src
+
+** Test your installation
+Navigate outside of the URIL-Robosuite directory
+
+Run the below test script to see if your installation worked.
+#+begin_src python 
+import numpy as np
+import robosuite as suite
+
+# create environment instance
+env = suite.make(
+    env_name="Lift", # try with other tasks like "Stack" and "Door"
+    robots="Panda",  # try with other robots like "Sawyer" and "Jaco"
+    has_renderer=True,
+    has_offscreen_renderer=False,
+    use_camera_obs=False,
+)
+
+# reset the environment
+env.reset()
+
+for i in range(1000):
+    action = np.random.randn(*env.action_spec[0].shape) * 0.1
+    obs, reward, done, info = env.step(action)  # take action in the environment
+    env.render()  # render on display
+#+end_src
+
+** Customizations
+*** Custom Camera Observation Angles
+Sometimes, you may need to add custom angles not from the given list of camera in an environment. 
+
+To add your own custom camera angles, go to =robosuite/models/assets/arenas/=. This folder contains all the arena environment settings for any given task, which also contains a given arena's camera configurations. 
+For example, for the common table tap setting, edit =table_arena.xml=. At the bottom of the file are the camera definitions, you can add your own, like the following for a mirrored side camera:
+
+#+begin_src xml
+<camera mode="fixed" name="sideviewmirrored" pos="-0.05651774593317116 -1.2761224129427358 1.4879572214102434" quat="0.843 0.537 0.0 0.0" />
+#+end_src
+
+The coordinate system is +y to the right of the front view, +x towards the front view camera, +z upwards. The rotation is defined by a quaternion.
