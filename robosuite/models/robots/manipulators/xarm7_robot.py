@@ -26,7 +26,7 @@ class XArm7(ManipulatorModel):
 
     @property
     def default_gripper(self):
-        return {"right": "PandaGripper"}
+        return {"right": "XArm7Gripper"}
 
     @property
     def default_controller_config(self):
