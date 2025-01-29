@@ -65,7 +65,7 @@
                     <joint name="joint7" axis="0 0 1" range="-6.28319 6.28319" frictionloss="1" damping="0.01"/>
                     <!-- <geom material="gray" mesh="end_tool"/> -->
 
-		    <body name="right_hand" pos="0.0 0.0 -0.0265" quat="0 0 0 1">
+		    <body name="right_hand" pos="0.0 0.0 -0.027" quat="0 0 0 1">
 			<!-- This sites were added for visualization. They are all standardized between models-->
 			<!-- Position mimics the gripper attachment point (right_hand) -->
 			<!--  Y-axis should be perpendicular to grasping motion, and Z-axis should point out of the robot eef -->
